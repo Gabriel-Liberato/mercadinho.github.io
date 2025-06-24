@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercadinho Digital</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header>
+        <h1>Mercadinho Digital</h1>
+        <nav>
+            <span id="welcome-message"></span>
+            <button id="logout-button" style="display: none;">Sair</button>
+            <button id="cart-button">Carrinho (<span id="cart-count">0</span>)</button>
+        </nav>
+    </header>
+
+    <main id="app-container">
+        <section id="login-screen" class="screen">
+            <h2>Bem-vindo! Faça seu login</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Usuário" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+                <p class="error-message" id="login-error" style="display: none;">Usuário ou senha inválidos.</p>
+            </form>
+        </section>
+
+        <section id="catalog-screen" class="screen" style="display: none;">
+            <h2>Nosso Catálogo</h2>
+            <div id="product-list">
+                </div>
+        </section>
+
+        <section id="cart-screen" class="screen" style="display: none;">
+            <h2>Seu Carrinho de Compras</h2>
+            <div id="cart-items">
+                </div>
+            <p class="cart-total">Total: R$ <span id="cart-total">0.00</span></p>
+            <button id="checkout-button">Finalizar Compra</button>
+            <button id="back-to-catalog-button">Continuar Comprando</button>
+        </section>
+
+        <section id="checkout-screen" class="screen" style="display: none;">
+            <h2>Finalizar Pedido</h2>
+            <div id="checkout-summary">
+                <h3>Resumo do Pedido</h3>
+                <div id="checkout-product-list">
+                    </div>
+                <p>Total a Pagar: R$ <span id="checkout-total">0.00</span></p>
+            </div>
+
+            <form id="checkout-form">
+                <h3>Informações de Entrega</h3>
+                <input type="text" id="delivery-address" placeholder="Endereço de Entrega" required>
+                <input type="text" id="delivery-city" placeholder="Cidade" required>
+                <input type="text" id="delivery-zip" placeholder="CEP" required>
+
+                <h3>Método de Pagamento</h3>
+                <select id="payment-method" required>
+                    <option value="">Selecione um método</option>
+                    <option value="credito">Cartão de Crédito</option>
+                    <option value="pix">PIX</option>
+                    <option value="boleto">Boleto</option>
+                </select>
+                <button type="submit">Confirmar Pedido</button>
+            </form>
+        </section>
+
+        <section id="order-confirmation-screen" class="screen" style="display: none;">
+            <h2>Pedido Confirmado!</h2>
+            <p>Obrigado por sua compra no Mercadinho Digital. Seu pedido foi processado com sucesso!</p>
+            <button id="new-purchase-button">Fazer Nova Compra</button>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
